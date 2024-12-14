@@ -23,6 +23,6 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: scraped-data
-          path: output.csv
+          path: sampleGit.csv
 
       - run: echo "🍏 This job's status is ${{ job.status }}."
