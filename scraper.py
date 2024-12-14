@@ -82,7 +82,7 @@ def writeCsv(row):
     headers = ";".join(headers)
     row = ";".join(row)
     try:
-        with open("sample.csv", "a", encoding="utf-8") as f:
+        with open("sampleGit.csv", "a", encoding="utf-8") as f:
             f.write(row + "\n")
     except Exception as e:
         logger.log(traceback.format_exc())
@@ -189,7 +189,7 @@ def removeDuplicate(file1, file2):
 
 def getAllUnits():
     chunks = read_excel_as_chunks(file_path)
-    for chunk in chunks[6266:]:
+    for chunk in chunks[10000:]:
         list_units = getUnitStatus(chunk)
         list_equipements = getEquipementStatus(chunk)
         for i in range(len(list_units)):
@@ -201,4 +201,4 @@ if __name__ == "__main__":
     getAllUnits()
     file1 = "sample.csv"
     file2 = "seaco.csv"
-    removeDuplicate(file1, file2)
+    #removeDuplicate(file1, file2)
