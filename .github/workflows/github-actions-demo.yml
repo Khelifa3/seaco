@@ -17,6 +17,12 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install --upgrade openpyxl
           python -m pip install --upgrade requests
-      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+       
       - run: python scraper.py
+      - name: Upload CSV File
+        uses: actions/upload-artifact@v3
+        with:
+          name: scraped-data
+          path: output.csv
+
       - run: echo "🍏 This job's status is ${{ job.status }}."
